@@ -1,0 +1,48 @@
+1. Liệt kê những ngôi nhà với thông tin là NhaID, ChuHo, Dientich
+SELECT NhaID, ChuHo, Dientich
+FROM Nha_Tren_Pho
+
+2. Liệt kê những ngôi nhà với thông tin NhaID, Tên chủ hộ
+SELECT NhaID, ChuHo
+FROM Nha_Tren_Pho
+
+3. Liệt kê những ngôi nhà với thông tin NhaID, ChuHo, Thanhtien = dientich * 180000
+SELECT NhaID, ChuHo, Dientich * 180000 AS Thanhtien
+FROM Nha_Tren_Pho
+
+4. Liệt kê những con đường không trùng nhau
+SELECT Distinct TenDuong
+FROM DuongPho
+
+5. Tạo ra một bảng mới bằng cú pháp into
+SELECT *
+INTO Nha_Bak
+FROM Nha_Tren_Pho
+
+6. Liệt kê những ngôi nhà có số nhân khẩu > 10
+SELECT *
+FROM Nha_Tren_Pho
+WHERE SoNhanKhau > 10
+
+7. Liệt kê những con đường có mã quận huyện là 2 và tên đường là đường đội cấn
+SELECT *
+FROM DuongPho
+WHERE MaQH = 2 AND TenDuong = N'Đường Đội Cấn'
+
+8. Liệt kê những con đường có maqh là 1 hoặc 2
+SELECT *
+FROM DuongPho
+WHERE MaQH OR (1,2)
+
+9.Liệt kê những con đường không phải MaQH 1 và 2
+SELECT *
+FROM DuongPho
+WHERE MaQH NOT IN (1,2)
+
+10. Liệt kê hai dòng đầu của bảng đường phố
+SELECT TOP 2
+FROM DuongPho
+
+11 . Liệt kê 50% bảng Nhà trên phố
+SELECT TOP 50 percent *
+FROM Nha_Tren_Pho
